@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -82,19 +81,19 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white dark:bg-black text-black dark:text-white px-4">
-      <div className="w-full max-w-md p-8 space-y-6 bg-gray-100 dark:bg-zinc-900 rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-bold text-center">Welcome Back 👋</h2>
+    <div className="flex items-center justify-center min-h-screen bg-[#fff8f0] px-4 text-black">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white border border-orange-200 rounded-2xl shadow-xl">
+        <h2 className="text-3xl font-extrabold text-center text-orange-500">Welcome Back</h2>
 
         <form onSubmit={handleLogin} className="space-y-5">
           {/* Email Field */}
           <div>
-            <label className="block mb-1 text-sm font-medium">Email</label>
+            <label className="block mb-1 text-sm font-semibold text-gray-700">Email</label>
             <input
               type="email"
-              className={`w-full px-4 py-2 bg-white dark:bg-zinc-800 border ${
-                errors.email ? "border-red-500" : "border-gray-300 dark:border-zinc-700"
-              } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500`}
+              className={`w-full px-4 py-2 border ${
+                errors.email ? "border-red-500" : "border-orange-200"
+              } rounded-lg bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-400`}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
@@ -104,13 +103,13 @@ export default function Login() {
 
           {/* Password Field */}
           <div>
-            <label className="block mb-1 text-sm font-medium">Password</label>
+            <label className="block mb-1 text-sm font-semibold text-gray-700">Password</label>
             <div className="relative">
               <input
                 type={showPass ? "text" : "password"}
-                className={`w-full px-4 py-2 bg-white dark:bg-zinc-800 border ${
-                  errors.password ? "border-red-500" : "border-gray-300 dark:border-zinc-700"
-                } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.password ? "border-red-500" : "border-orange-200"
+                } rounded-lg bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-400`}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
@@ -131,7 +130,7 @@ export default function Login() {
             <button
               type="button"
               onClick={handleForgotPassword}
-              className="text-blue-600 hover:underline"
+              className="text-orange-500 hover:underline font-medium"
             >
               Forgot Password?
             </button>
@@ -140,7 +139,7 @@ export default function Login() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-2 font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition duration-200"
+            className="w-full py-2 font-semibold bg-orange-400 hover:bg-orange-500 text-white rounded-lg transition duration-200"
             disabled={loading}
           >
             {loading ? "Logging in..." : "Login"}
@@ -148,12 +147,12 @@ export default function Login() {
         </form>
 
         {/* Divider */}
-        <div className="text-center text-sm text-gray-600 dark:text-gray-400">OR</div>
+        <div className="text-center text-sm text-gray-500">OR</div>
 
         {/* Google Login */}
         <button
           onClick={handleGoogleLogin}
-          className="w-full flex items-center justify-center gap-2 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+          className="w-full flex items-center justify-center gap-2 py-2 border border-orange-300 rounded-lg hover:bg-orange-50 transition"
           disabled={loading}
         >
           <FcGoogle size={20} />
@@ -161,9 +160,9 @@ export default function Login() {
         </button>
 
         {/* Signup Link */}
-        <div className="text-sm text-center text-gray-700 dark:text-gray-400">
+        <div className="text-sm text-center text-gray-700">
           Don’t have an account?{" "}
-          <Link to="/signup" className="text-blue-600 hover:underline">
+          <Link to="/signup" className="text-orange-500 hover:underline font-medium">
             Sign Up
           </Link>
         </div>

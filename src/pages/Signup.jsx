@@ -32,7 +32,6 @@ export default function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
     if (!validatePassword()) return;
 
     setLoading(true);
@@ -84,16 +83,20 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white dark:bg-black text-black dark:text-white px-4">
-      <div className="w-full max-w-md p-8 space-y-6 bg-gray-100 dark:bg-zinc-900 rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-bold text-center">Create Your Account 🎉</h2>
+    <div className="flex items-center justify-center min-h-screen bg-orange-100 text-black px-4">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-xl border border-orange-300">
+        <h2 className="text-3xl font-bold text-center text-orange-600">
+          Create Your Account 
+        </h2>
 
         <form onSubmit={handleSignup} className="space-y-5">
           <div>
-            <label className="block mb-1 text-sm font-medium">Email</label>
+            <label className="block mb-1 text-sm font-medium text-orange-700">
+              Email
+            </label>
             <input
               type="email"
-              className="w-full px-4 py-2 bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-4 py-2 bg-orange-50 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -102,10 +105,12 @@ export default function Signup() {
           </div>
 
           <div>
-            <label className="block mb-1 text-sm font-medium">Password</label>
+            <label className="block mb-1 text-sm font-medium text-orange-700">
+              Password
+            </label>
             <input
               type="password"
-              className="w-full px-4 py-2 bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-4 py-2 bg-orange-50 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -114,10 +119,12 @@ export default function Signup() {
           </div>
 
           <div>
-            <label className="block mb-1 text-sm font-medium">Confirm Password</label>
+            <label className="block mb-1 text-sm font-medium text-orange-700">
+              Confirm Password
+            </label>
             <input
               type="password"
-              className="w-full px-4 py-2 bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-4 py-2 bg-orange-50 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
               required
@@ -127,29 +134,27 @@ export default function Signup() {
 
           <button
             type="submit"
-            className="w-full py-2 font-semibold bg-green-600 hover:bg-green-700 text-white rounded-lg transition duration-200"
+            className="w-full py-2 font-semibold bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition duration-200"
             disabled={loading}
           >
             {loading ? "Creating account..." : "Sign Up"}
           </button>
         </form>
 
-        <div className="text-center text-sm text-gray-600 dark:text-gray-400">
-          Or sign up with
-        </div>
+        <div className="text-center text-sm text-orange-700">Or sign up with</div>
 
         <button
           onClick={handleGoogleSignup}
           disabled={loading}
-          className="w-full flex items-center justify-center gap-2 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+          className="w-full flex items-center justify-center gap-2 py-2 border border-orange-300 rounded-lg hover:bg-orange-50 transition"
         >
           <FcGoogle size={20} />
           {loading ? "Please wait..." : "Continue with Google"}
         </button>
 
-        <div className="text-sm text-center text-gray-700 dark:text-gray-400">
+        <div className="text-sm text-center text-orange-700">
           Already have an account?{" "}
-          <Link to="/login" className="text-green-600 hover:underline">
+          <Link to="/login" className="text-orange-600 hover:underline font-medium">
             Login
           </Link>
         </div>

@@ -8,7 +8,7 @@ import Products from './components/Products/Products';
 import TopProducts from './components/TopProducts/TopProducts';
 import Footer from './components/Footer/Footer';
 
-import CartPage from './pages/CartPage'; // ✅ Ensure this file has a default export
+import CartPage from './pages/CartPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 

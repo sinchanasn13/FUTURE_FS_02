@@ -10,6 +10,7 @@ import Img7 from "../../assets/linen-shirt.jpeg";
 import Img8 from "../../assets/leather-jacket.jpeg";
 
 
+
 const ProductsData = [
   {
     id: 1,
